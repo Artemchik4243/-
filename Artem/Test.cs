@@ -15,24 +15,12 @@ namespace Artem
     public class CalculatorModel
     {
         [Test]
-        [AllureTest("Add")]
         [AllureSeverity(SeverityLevel.Normal)]
         [AllureOwner("John Doe")]
-        public double Add(double a, double b)
-        {
-            return a + b;
-        }
+        public double Add(double a, double b) {return a + b;}
+        public double Subtract(double a, double b) {return a - b;}
 
-        // Другие методы калькулятора
-        public double Subtract(double a, double b)
-        {
-            return a - b;
-        }
-
-        public double Multiply(double a, double b)
-        {
-            return a * b;
-        }
+        public double Multiply(double a, double b) {return a * b;}
 
         public double Divide(double a, double b)
         {
@@ -55,30 +43,17 @@ namespace Artem
 
             this.view.Calculate += Calculate;
         }
-
+        [AllureStep("Performing Calculation")]
         private void Calculate(object sender, EventArgs e)
         {
-            // Получаем данные из формы и передаем их в модель
             double a = view.GetValueA();
             double b = view.GetValueB();
+            double result = model.Add(a, b);
 
-            // Выполняем вычисления
-            //double result = model.Add(a, b);
+            view.DisplayResult(result);
+            AllureLifecycle.Instance.AddAttachment("Input Values", "text/plain", $"{a}, {b}");
+            AllureLifecycle.Instance.AddAttachment("Calculation Result", "text/plain", result.ToString());
 
-            // Отправляем результат в форму
-            //view.DisplayResult(result);
-            // Используйте атрибут Step для аннотации кода, который нужно отобразить в отчете Allure
-            AllureLifecycle.Instance.WrapInStep(() =>
-            {
-                double result = model.Add(a, b);
-
-                // Отправляем результат в форму
-                view.DisplayResult(result);
-
-                // Добавляем атрибуты Allure
-                AllureLifecycle.Instance.AddAttachment("Input Values", "text/plain", $"{a}, {b}");
-                AllureLifecycle.Instance.AddAttachment("Calculation Result", "text/plain", result.ToString());
-            }, "Performing Calculation");
         }
     }
 }

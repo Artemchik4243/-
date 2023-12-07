@@ -2,6 +2,26 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "Allure.Commons/3.5.0.73": {
+        "type": "package",
+        "dependencies": {
+          "MimeTypesMap": "1.0.8",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Allure.Commons.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Allure.Commons.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/netstandard2.0/allureConfig.Template.json": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "Allure.Net.Commons/2.11.0": {
         "type": "package",
         "dependencies": {
@@ -133,6 +153,23 @@
     }
   },
   "libraries": {
+    "Allure.Commons/3.5.0.73": {
+      "sha512": "cqMlst9Za1TfOsgN2fWzMkdUeOTy07AZHaudOuRVAjTyBmUxDKOKxCwlkxO1Xw91ogsPCdXIJdduUtFFGw+Thw==",
+      "type": "package",
+      "path": "allure.commons/3.5.0.73",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "allure-net.png",
+        "allure.commons.3.5.0.73.nupkg.sha512",
+        "allure.commons.nuspec",
+        "content/allureConfig.Template.json",
+        "contentFiles/any/net45/allureConfig.Template.json",
+        "contentFiles/any/netstandard2.0/allureConfig.Template.json",
+        "lib/net45/Allure.Commons.dll",
+        "lib/netstandard2.0/Allure.Commons.dll"
+      ]
+    },
     "Allure.Net.Commons/2.11.0": {
       "sha512": "YvtYOIUI/nkDZB03V9YRxpaAmccTWM+CgZHV0GbY14RrMMVAKXW1VMxPdhDzwbXm9cOLzzNv8y3jUr4PDPd3YA==",
       "type": "package",
@@ -338,6 +375,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "Allure.Commons >= 3.5.0.73",
       "Allure.NUnit >= 2.11.0",
       "Allure.Net.Commons >= 2.11.0",
       "NUnit >= 4.0.1",
@@ -345,23 +383,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Максим\\.nuget\\packages\\": {},
+    "C:\\Users\\a.klimentev\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Максим\\source\\repos\\Artem\\Artem\\Artem.csproj",
+      "projectUniqueName": "C:\\Users\\a.klimentev\\Desktop\\Artem\\Artem\\Artem.csproj",
       "projectName": "Artem",
-      "projectPath": "C:\\Users\\Максим\\source\\repos\\Artem\\Artem\\Artem.csproj",
-      "packagesPath": "C:\\Users\\Максим\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Максим\\source\\repos\\Artem\\Artem\\obj\\",
+      "projectPath": "C:\\Users\\a.klimentev\\Desktop\\Artem\\Artem\\Artem.csproj",
+      "packagesPath": "C:\\Users\\a.klimentev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\a.klimentev\\Desktop\\Artem\\Artem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Максим\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\a.klimentev\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -370,6 +408,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -388,6 +427,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "Allure.Commons": {
+            "target": "Package",
+            "version": "[3.5.0.73, )"
+          },
           "Allure.NUnit": {
             "target": "Package",
             "version": "[2.11.0, )"
@@ -424,7 +467,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
